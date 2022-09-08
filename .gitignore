@@ -1,2 +1,4 @@
 aws_terraform_user.csv
 terraform-aws.pub
+.*
+*.csv

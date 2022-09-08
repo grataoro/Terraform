@@ -11,7 +11,7 @@ resource "aws_security_group" "acesso_ssh" {   # define o recurso
     from_port        = 22                    # porta de saída
     to_port          = 22                    # posta de entrada
     protocol         = "tcp"                 # tipo de conexão
-    cidr_blocks      = ["177.30.99.177/32"]  # ips que podem ter acesso
+    cidr_blocks      = var.cdirs_acesso_remoto  # ips que podem ter acesso
     
   }
 
@@ -30,10 +30,10 @@ resource "aws_security_group" "acesso_ssh_us-east-2" {   # define o recurso
 
   ingress {
     description      = "tcp_ssh"      
-    from_port        = 22                    # porta de saída
-    to_port          = 22                    # posta de entrada
-    protocol         = "tcp"                 # tipo de conexão
-    cidr_blocks      = ["177.30.99.177/32"]  # ips que podem ter acesso
+    from_port        = 22                       # porta de saída
+    to_port          = 22                       # posta de entrada
+    protocol         = "tcp"                    # tipo de conexão
+    cidr_blocks      = var.cdirs_acesso_remoto  # ips que podem ter acesso
     
   }
 
